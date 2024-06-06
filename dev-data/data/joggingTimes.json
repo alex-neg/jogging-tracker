@@ -1,0 +1,44 @@
+[
+  {
+    "userId": "0",
+    "startTime": "2024-05-01T08:00:00Z",
+    "endTime": "2024-05-01T09:00:00Z",
+    "distance": 5,
+    "description": "Morning run in the park"
+  },
+  {
+    "userId": "1",
+    "startTime": "2024-05-02T18:00:00Z",
+    "endTime": "2024-05-02T19:30:00Z",
+    "distance": 7,
+    "description": "Evening jog along the beach"
+  },
+  {
+    "userId": "2",
+    "startTime": "2024-05-03T07:30:00Z",
+    "endTime": "2024-05-03T08:30:00Z",
+    "distance": 4,
+    "description": "Morning run in the neighborhood"
+  },
+  {
+    "userId": "611234567890123456789012",
+    "startTime": "2024-05-18T07:00:00.000Z",
+    "endTime": "2024-05-18T07:30:00.000Z",
+    "distance": 5,
+    "description": "Morning jog"
+  },
+  {
+    "userId": "611234567890123456789012",
+    "startTime": "2024-05-18T12:00:00.000Z",
+    "endTime": "2024-05-18T12:30:00.000Z",
+    "distance": 3,
+    "description": "Lunchtime run"
+  },
+  {
+    "userId": "611234567890123456789012",
+    "startTime": "2024-05-18T18:00:00.000Z",
+    "endTime": "2024-05-18T18:45:00.000Z",
+    "distance": 7,
+    "description": "Evening workout"
+  }
+]
