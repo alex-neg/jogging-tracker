@@ -8,6 +8,7 @@ const userRouter = require("./routes/userRoutes");
 const testingRouter = require("./routes/testingRoutes");
 const appError = require("./utils/appError");
 const globalErrorController = require("./controllers/globalErrorController");
+const cors = require("cors");
 
 dotenv.config({ path: "./config.env" });
 
@@ -23,6 +24,14 @@ process.on("uncaughtException", (err) => {
 // Middlewares
 app.use(morgan("dev"));
 app.use(bodyParser.json());
+// app.use(
+//   cors({
+//     origin: "http://127.0.0.1:5500", // Allow requests from this origin
+//     methods: ["POST"], // Allow these HTTP methods
+//     allowedHeaders: ["Content-Type", "Authorization"], // Allow these headers
+//   })
+// );
+app.use(cors());
 
 // Connecting to database
 const DB = process.env.DATABASE.replace(

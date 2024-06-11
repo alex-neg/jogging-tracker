@@ -6,6 +6,8 @@ const appError = require("./../utils/appError");
 const { log } = require("console");
 
 const signToken = (id) => {
+  console.log("JWT_SECRET:", process.env.JWT_SECRET);
+  console.log("JWT_EXPIRES_IN:", process.env.JWT_EXPIRES_IN);
   return jwt.sign({ id: id }, process.env.JWT_SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
@@ -24,6 +26,8 @@ exports.signup = catchAsync(async (req, res, next) => {
   const { name, email, password, passwordConfirm, role, adminSecret } =
     req.body;
 
+  console.log(req.body);
+
   // Default role to 'user' unless adminSecret is provided and matches
   let userRole = "user";
   if (adminSecret && adminSecret === process.env.ADMIN_SECRET) {
@@ -37,14 +41,16 @@ exports.signup = catchAsync(async (req, res, next) => {
     passwordConfirm,
     role: userRole,
   });
+  console.log(newUser);
 
   const token = signToken(newUser._id);
+  console.log("Generated Token:", token);
 
   res.status(201).json({
     status: "success",
     token: token,
     data: {
-      newUser,
+      user: newUser,
     },
   });
 });
